@@ -28,8 +28,8 @@ function ProfileSidebar(propriedades) {
 export default function Home() {
   const [comunidades, setComunidades] = React.useState([{
     id: '122353464564564535',
-    title: 'oi',
-    image: 'https://github.com/NylipekWolf.png'
+    title: 'proa',
+    image: 'https://media-exp1.licdn.com/dms/image/C4D0BAQFD15RCaLy7tA/company-logo_200_200/0/1591018493674?e=1634774400&v=beta&t=ocT6VEz3IVfxJsRy4bhT9ZSSP-pdJUzZ5ydlVc1Kfm0'
   }]);
   console.log('nosso test', comunidades);
   const GithubUser = 'NylipekWolf'; 
