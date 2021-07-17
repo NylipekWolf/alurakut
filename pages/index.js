@@ -9,7 +9,7 @@ import {ProfileRelationsBoxWrapper} from '../src/components/ProfileRelations'
 function ProfileSidebar(propriedades) {
   console.log(propriedades);
   return(
-    <Box>
+    <Box as="aside">
       <img src = {`https://github.com/${propriedades.GithubUser}.png`} />
       <hr/>
 
@@ -26,7 +26,10 @@ function ProfileSidebar(propriedades) {
 }
 
 export default function Home() {
-  const [comunidades, setComunidades] = React.useState(['Alurakut'])
+  const [comunidades, setComunidades] = React.useState([{
+    title: 'oi',
+    image: 'https://github.com/NylipekWolf.png'
+  }]);
   console.log('nosso test', comunidades);
   const GithubUser = 'NylipekWolf'; 
   const PessoasQueEuAdmiro = ['CaioemanuelIF', 'TawaneSouzaOL', 'WilliamAraujo777', 'LincolnPerez', 
@@ -55,8 +58,16 @@ export default function Home() {
             <form onSubmit={function handleCriarComunidade(e) {
               e.preventDefault();
               const dadosForms = new FormData(e.target);
+              console.log('Campo: ', dadosForms.get('title'));
+              console.log('Campo: ', dadosForms.get('image'));
+
+              const comunidade = {
+                id: new Date().toISOString(),
+                title: dadosForms.get('title'),
+                image: dadosForms.get('image'),
+              }
               
-              const comunidadesAtualizadas = [...comunidades, "Alura Stars"]
+              const comunidadesAtualizadas = [...comunidades, comunidade]
               setComunidades(comunidadesAtualizadas)
             }}>
               <div>
@@ -70,9 +81,8 @@ export default function Home() {
               <div>
                 <input 
                   placeholder="Coloque uma URL para usamos de capa" 
-                  name="title" 
+                  name="image" 
                   aria-label="Coloque uma URL para usamos de capa"
-                  type="text"
                 />
               </div>
               <button>
@@ -86,10 +96,10 @@ export default function Home() {
             <ul>
               {comunidades.map((itemAtual) =>{
                 return(
-                  <li>
-                    <a href={`/user/${itemAtual}`} key={itemAtual}>
-                    <img src = {`https://github.com/NylipekWolf.png`} />
-                    <span>{itemAtual}</span>
+                  <li key={itemAtual.id}>
+                    <a href={`/user/${itemAtual.title}`} key={itemAtual.title}>
+                    <img src = {itemAtual.image} />
+                    <span>{itemAtual.title}</span>
                   </a>
                   </li>
                 )
@@ -104,11 +114,11 @@ export default function Home() {
             <ul>
               {PessoasQueEuAdmiro.map((itemAtual) =>{
                 return(
-                  <li>
-                    <a href={`/user/${itemAtual}`} key={itemAtual}>
-                    <img src = {`https://github.com/${itemAtual}.png`} />
-                    <span>{itemAtual}</span>
-                  </a>
+                  <li key={itemAtual}>
+                    <a href={`/users/${itemAtual}`}>
+                      <img src={`https://github.com/${itemAtual}.png`} />
+                      <span>{itemAtual}</span>
+                    </a>
                   </li>
                 )
               })}
