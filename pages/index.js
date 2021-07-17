@@ -27,6 +27,7 @@ function ProfileSidebar(propriedades) {
 
 export default function Home() {
   const [comunidades, setComunidades] = React.useState([{
+    id: '122353464564564535',
     title: 'oi',
     image: 'https://github.com/NylipekWolf.png'
   }]);
