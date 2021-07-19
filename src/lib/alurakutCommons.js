@@ -153,7 +153,7 @@ AlurakutMenu.Wrapper = styled.header`
       background-image: url(${`${BASE_URL}/icons/search.svg`});
       background-position: 15px center;
       background-repeat: no-repeat;
-      border-radius: 1000px;
+      border-radius: 9px;
       font-size: 12px;
       ::placeholder {
         color: #ffffff;
@@ -229,7 +229,7 @@ export function AlurakutProfileSidebarMenuDefault() {
 }
 AlurakutProfileSidebarMenuDefault.Wrapper = styled.div`
   a {
-    font-size: 12px;
+    font-size: 14px;
     color: #a57bd4;
     margin-bottom: 16px;
     display: flex;
