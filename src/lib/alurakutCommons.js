@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import NextLink from 'next/link';
+import Box from '../components/Box';
 
 const BASE_URL = 'http://alurakut.vercel.app/';
 const v = '1';
@@ -54,16 +55,17 @@ export function AlurakutMenu({ githubUser }) {
 }
 AlurakutMenu.Wrapper = styled.header`
   width: 100%;
-  background-color: #308BC5;
+  background-color: #33424c;
   .alurakutMenuProfileSidebar {
     background: white;
     position: fixed;
     z-index: 100;
-    padding: 46px;
+    padding: 436px;
     bottom: 0;
     left: 0;
     right: 0;
     top: 48px;
+    overflow-y: scroll;
     transition: .3s;
     pointer-events: ${({ isMenuOpen }) => isMenuOpen ? 'all' : 'none'};
     opacity: ${({ isMenuOpen }) => isMenuOpen ? '1' : '0'};
@@ -80,7 +82,7 @@ AlurakutMenu.Wrapper = styled.header`
     }
     .boxLink {
       font-size: 18px;
-      color: #2E7BB4;
+      color: #a57bd4;
       -webkit-text-decoration: none;
       text-decoration: none;
       font-weight: 800;
@@ -93,7 +95,7 @@ AlurakutMenu.Wrapper = styled.header`
     }
   }
   .container {
-    background-color: #308BC5;
+    background-color: #33424c;
     padding: 7px 16px;
     max-width: 1110px;
     margin: auto;
@@ -120,13 +122,13 @@ AlurakutMenu.Wrapper = styled.header`
       }
       a {
         font-size: 12px;
-        color: white;
+        color:#b9b4b4;
         padding: 10px 16px;
         position: relative;
         text-decoration: none;
         &:after {
           content: " ";
-          background-color: #5292C1;
+          background-color: #ffffff;
           display: block;
           position: absolute;
           width: 1px;
@@ -137,10 +139,15 @@ AlurakutMenu.Wrapper = styled.header`
           bottom: 0;
         }
       }
+      a:nth-child(1){
+        &:after {
+          background-color: #33424c;
+        }
+      }
     }
     input {
       color: #ffffff;
-      background: #5579A1;
+      background: #a57bd4;
       padding: 10px 42px;
       border: 0;
       background-image: url(${`${BASE_URL}/icons/search.svg`});
@@ -162,7 +169,8 @@ AlurakutMenu.Logo = styled.img`
   height: 34px;
 `;
 
-function AlurakutMenuProfileSidebar({ githubUser }) {
+function AlurakutMenuProfileSidebar({ GithubUser }) {
+  const githubUser = 'NylipekWolf';
   return (
     <div className="alurakutMenuProfileSidebar">
       <div>
@@ -222,7 +230,7 @@ export function AlurakutProfileSidebarMenuDefault() {
 AlurakutProfileSidebarMenuDefault.Wrapper = styled.div`
   a {
     font-size: 12px;
-    color: #2E7BB4;
+    color: #a57bd4;
     margin-bottom: 16px;
     display: flex;
     align-items: center;
@@ -477,7 +485,7 @@ export const AlurakutStyles = css`
     outline: 0;
     &:hover,
     &:focus {
-      opacity: .8;
+      opacity: .3;
     }
     &:disabled {
       cursor: not-allowed;

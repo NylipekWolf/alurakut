@@ -3,12 +3,12 @@ import styled from 'styled-components';
 const Box = styled.div`
   background: #FFFFFF;
   border-radius: 8px;
-  padding: 16px;
+  padding: 12px;
   /* CSS Pré-Pronto */
   margin-bottom: 10px;
   .boxLink {
     font-size: 14px;
-    color: #2E7BB4;
+    color: #a57bd4;
     text-decoration: none;
     font-weight: 800;
   }
