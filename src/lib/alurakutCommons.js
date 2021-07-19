@@ -298,7 +298,7 @@ OrkutNostalgicIconSet.List = styled.ul`
   flex-wrap: wrap;
   li {
     font-size: 12px;
-    color: #5A5A5A;
+    color: #ffffff;
     display: grid;
     grid-template-areas:
       "title title"
