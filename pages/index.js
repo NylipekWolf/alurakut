@@ -50,7 +50,7 @@ function ProfileRelationsBox(propriedades) {
 export default function Home() {
   const [comunidades, setComunidades] = React.useState([{
     id: '122353464564564535',
-    title: 'proa',
+    title: 'Proa',
     image: 'https://media-exp1.licdn.com/dms/image/C4D0BAQFD15RCaLy7tA/company-logo_200_200/0/1591018493674?e=1634774400&v=beta&t=ocT6VEz3IVfxJsRy4bhT9ZSSP-pdJUzZ5ydlVc1Kfm0'
   }]);
   console.log('nosso test', comunidades);
@@ -69,6 +69,10 @@ export default function Home() {
     })
     .then(function(respostaCompleta) {
       setSeguidores(respostaCompleta);
+    })
+
+    fetch('https://graphql.datocms.com/', {
+      method: 'post',
     })
   }, [])
 
@@ -147,7 +151,7 @@ export default function Home() {
           </ProfileRelationsBoxWrapper>
           <ProfileRelationsBoxWrapper>
             <h2 className="smallTitle">
-              pessoas que eu admiro ({PessoasQueEuAdmiro.length})
+              Pessoas que eu admiro ({PessoasQueEuAdmiro.length})
             </h2>
 
             <ul>

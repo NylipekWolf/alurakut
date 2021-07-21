@@ -485,11 +485,11 @@ export const AlurakutStyles = css`
     outline: 0;
     &:hover,
     &:focus {
-      opacity: .3;
+      opacity: 0.89;
     }
     &:disabled {
       cursor: not-allowed;
-      opacity: .5;
+      opacity: .21;
     }
   }
   input {
@@ -497,7 +497,7 @@ export const AlurakutStyles = css`
     outline: 0;
     &:disabled {
       cursor: not-allowed;
-      opacity: .5;
+      opacity: .51;
     }
     &:hover,
     &:focus {
