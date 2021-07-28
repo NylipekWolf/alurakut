@@ -72,7 +72,28 @@ export default function Home() {
     })
 
     fetch('https://graphql.datocms.com/', {
-      method: 'post',
+      method: 'POST',
+      headers: {
+        'Authorization': 'ac1cd5ab422d9e020373be28fba2ff',
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({ "query": `query{
+        allCommunities {
+          id
+          title
+          _status
+          _firstPublishedAt
+          imageUrl
+          creatorSlug
+        }
+      }`})
+    })
+    .then((response) => response.json()) // Pega o retorno do response.json() e já retorna
+    .then((respostaCompleta) => {
+      const comunidadesVindasDoDato = respostaCompleta.data.allCommunities;
+      console.log(comunidadesVindasDoDato)
+      setComunidades(comunidadesVindasDoDato)
     })
   }, [])
 
