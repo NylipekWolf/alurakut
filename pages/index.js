@@ -49,10 +49,8 @@ function ProfileRelationsBox(propriedades) {
 
 export default function Home() {
   const [comunidades, setComunidades] = React.useState([{
-    id: '122353464564564535',
-    title: 'Proa',
-    image: 'https://media-exp1.licdn.com/dms/image/C4D0BAQFD15RCaLy7tA/company-logo_200_200/0/1591018493674?e=1634774400&v=beta&t=ocT6VEz3IVfxJsRy4bhT9ZSSP-pdJUzZ5ydlVc1Kfm0'
-  }]);
+
+    }]);
   console.log('nosso test', comunidades);
   const GithubUser = 'NylipekWolf'; 
   const PessoasQueEuAdmiro = ['CaioemanuelIF', 'TawaneSouzaOL', 'WilliamAraujo777', 'LincolnPerez', 
@@ -157,12 +155,15 @@ export default function Home() {
         <div className="profileRelationsArea" style ={{ gridArea: 'profileRelationsArea' }}>
         <ProfileRelationsBox title="Seguidores" items={seguidores} />
           <ProfileRelationsBoxWrapper>
+            <h2 className="smallTitle">
+              comunidades ({comunidades.length})
+            </h2>
             <ul>
-              {comunidades.map((itemAtual) =>{
+            {comunidades.slice(0,6).map((itemAtual) =>{
                 return(
                   <li key={itemAtual.id}>
-                    <a href={`/user/${itemAtual.title}`} key={itemAtual.title}>
-                    <img src = {itemAtual.image} />
+                    <a href={`/user/${itemAtual.id}`}>
+                    <img src = {itemAtual.imageUrl} />
                     <span>{itemAtual.title}</span>
                   </a>
                   </li>
@@ -176,7 +177,7 @@ export default function Home() {
             </h2>
 
             <ul>
-              {PessoasQueEuAdmiro.map((itemAtual) =>{
+              {PessoasQueEuAdmiro.slice(0,6).map((itemAtual) =>{
                 return(
                   <li key={itemAtual}>
                     <a href={`/users/${itemAtual}`}>
@@ -193,3 +194,5 @@ export default function Home() {
     </>
   ) 
 }
+
+
